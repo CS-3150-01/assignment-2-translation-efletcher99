@@ -7,42 +7,43 @@ struct Node{
 };
 
 struct Node* head = NULL;
-struct Node* two = NULL;
-struct Node* three = NULL;
 struct Node* tail = NULL;
 
 void display(struct Node* n){   
             
         if(n == NULL) {    
             printf("List is empty");    
-            return;    
+            return;  
         }    
         printf("Nodes of singly linked list: ");    
         while(n != NULL) {    
             
             printf(" %d ", n->data);    
             n = n->next;    
-        }      
-    }  
+    }      
+}  
 
+void addNode(int data) {       
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));    
+               
+    if(head == NULL) {    
+           
+        head = newNode;    
+        tail = newNode;    
+    }    
+    else {    
+        newNode->data = data;   
+        tail->next = newNode;  
+   
+        tail = newNode;    
+    }  
+}
 
 int main() {
-    head = (struct Node*)malloc(sizeof(struct Node));
-    two = (struct Node*)malloc(sizeof(struct Node));
-    three = (struct Node*)malloc(sizeof(struct Node));
-    tail = (struct Node*)malloc(sizeof(struct Node));
-
-    head->data = 1;
-    head->next = two;
-
-    two->data = 2;
-    two->next = three;
-
-    three->data = 3;
-    three->next = tail;
-
-    tail->data = 0;
-    tail->next = NULL;
+    
+    addNode(0);
+    addNode(2);
+    addNode(3);
 
     display(head);
 
