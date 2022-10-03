@@ -37,8 +37,8 @@ int numOfBST(int key) {
 
 int main(){
     struct Node* root = NULL;
-    int factorialNum = 6;
-    int num = factorial(factorialNum);
-    printf("The factorial of %d is: %d", factorialNum, num);
+    int num = factorial(6);
+    printf("The factorial of %d is: %d\n", 6, num);
+    printf("Total number of possible Binary Search Trees with given key: %d",  numOfBST(5));
     return 0;  
 }
